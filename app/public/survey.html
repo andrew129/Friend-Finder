@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="">
 </head>
 <body>
     <div class='container'>
@@ -47,7 +48,7 @@
             </div>
             <div class="col-6">
                 <h5>Question 1</h5>
-                <p>How likely are you to drive a truck?</p>
+                <p>I like to be around a lot of people</p>
                 <select class='chosen-select' name="answer-choices" id="question-1" style="margin-bottom: 20px;">
                     <option value=""><span>Select an Option</span></option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -57,7 +58,7 @@
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
                 <h5>Question 2</h5>
-                <p>What is the likelihood that you would enjoy hunting on the weekends?</p>
+                <p>I am creative</p>
                 <select class='chosen-select' name="answer-choices" id="question-2" style="margin-bottom: 20px;">
                     <option value=""><span>Select an Option</span></option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -67,8 +68,78 @@
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
                 <h5>Question 3</h5>
-                <p>I enjoy mudding</p>
+                <p>I love going to sporting events</p>
                 <select class='chosen-select' name="answer-choices" id="question-3" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 4</h5>
+                <p>I am a casual drinker</p>
+                <select class='chosen-select' name="answer-choices" id="question-4" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 5</h5>
+                <p>I like cold weather</p>
+                <select class='chosen-select' name="answer-choices" id="question-5" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 6</h5>
+                <p>I love cooking meals for people</p>
+                <select class='chosen-select' name="answer-choices" id="question-6" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 7</h5>
+                <p>I like to eat fast food</p>
+                <select class='chosen-select' name="answer-choices" id="question-7" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 8</h5>
+                <p>I never want to get married</p>
+                <select class='chosen-select' name="answer-choices" id="question-8" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 9</h5>
+                <p>I like to shoot guns at the range</p>
+                <select class='chosen-select' name="answer-choices" id="question-9" style="margin-bottom: 20px;">
+                    <option value=""><span>Select an Option</span></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <h5>Question 10</h5>
+                <p>traveling is one of my favorite hobbies</p>
+                <select class='chosen-select' name="answer-choices" id="question-10" style="margin-bottom: 20px;">
                     <option value=""><span>Select an Option</span></option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -110,7 +181,7 @@
             </div>
             <div class="modal-body">
                 <h2 id="match-name"></h2>
-                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="broken">
+                <img id="match-img" alt="broken">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -162,7 +233,7 @@
                 let userData = {
                     name: $('#name').val(),
                     photo: $('#photo').val(),
-                    scores: [$('#question-1').val(), $('#question-2').val(), $('#question-3').val()]
+                    scores: [$('#question-1').val(), $('#question-2').val(), $('#question-3').val(), $('#question-4').val(), $('#question-5').val(), $('#question-6').val(), $('#question-7').val(), $('#question-8').val(), $('#question-9').val(), $('#question-10').val()]
                 }
 
                 console.log(userData)
@@ -176,7 +247,6 @@
                 })
             }
             else {
-                console.log('hello')
                 alert("Please fill out all fields before submitting!");
             }
         });

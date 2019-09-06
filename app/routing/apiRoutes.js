@@ -1,5 +1,4 @@
 const friendsArray = require("../data/friends.js");
-
 module.exports = function(app) {
     app.get('/api/friends', function(request, response) {
         console.log(response)
@@ -7,25 +6,18 @@ module.exports = function(app) {
     }) 
 
     app.post('/api/:friends', function(req, res) {
-
-        friendsArray.push(req.body)
-
-        res.json(true)
+        // function add(accumulator, a) {
+        //     return accumulator += a
+        // }
 
         for (let i = 0; i < friendsArray.length; i++) {
-
-            console.log(friendsArray[i].scores)
+            let numArr = []
+            var scores = friendsArray[i].scores
+            numArr.push(scores)
+            console.log(numArr)
         }
+        // let sumArray = [];
+        // sumArray.push(scores.reduce(add, 0))
+        // console.log(sumArray)
     })
-}
-
-function numberFinder() {
-
-    let scores = []
-    
-
-    for (let i = 0; i < friendsArray.length; i++) {
-        friendsArray[i].scores -= req.body.scores
-
-    }
 }
