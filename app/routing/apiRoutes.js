@@ -5,19 +5,18 @@ module.exports = function(app) {
         return response.json(friendsArray)
     }) 
 
-    app.post('/api/:friends', function(req, res) {
-        // function add(accumulator, a) {
-        //     return accumulator += a
-        // }
-
+    app.post('/api/friends', function(req, res) {
+        let sums = [];
+        let scores = req.body.scores;
         for (let i = 0; i < friendsArray.length; i++) {
-            let numArr = []
-            var scores = friendsArray[i].scores
-            numArr.push(scores)
-            console.log(numArr)
+            let amount = 0;
+            for (j = 0;j < scores.length; j++) {
+                let difference = Math.abs(friendsArray[i].scores[j] - scores[j]); 
+                console.log(difference);
+                amount = amount + difference;
+            }
+            sums.push(amount);  
+            console.log(sums)
         }
-        // let sumArray = [];
-        // sumArray.push(scores.reduce(add, 0))
-        // console.log(sumArray)
     })
 }
